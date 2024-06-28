@@ -1,21 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
-
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/news', [HomeController::class, 'create']);
-Route::get('/create', [HomeController::class, 'create']);
-Route::get('/edit', [HomeController::class, 'edit']);
-Route::get('/edit/{form}', [HomeController::class, 'edit']);
-Route::get('/show', [HomeController::class, 'show']);
-Route::get('/create/store/{request}', [HomeController::class, 'store']);
+use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')
